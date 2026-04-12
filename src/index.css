@@ -1,13 +1,80 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url(./blocks/page/page.css);
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import url(./blocks/find-pair/find-pair.css);
+@import url(./blocks/find-pair/__logo/find-pair__logo.css);
+@import url(./blocks/find-pair/__menu/find-pair__menu.css);
+@import url(./blocks/find-pair/__menu-option-container/find-pair__menu-option-container.css);
+@import url(./blocks/find-pair/__menu-option/find-pair__menu-option.css);
+@import url(./blocks/find-pair/__back-link/find-pair__back-link.css);
+
+@import url(./blocks/get-player-name/get-player-name.css);
+@import url(./blocks/get-player-name/__icon/get-player-name__icon.css);
+@import url(./blocks/get-player-name/__title/get-player-name__title.css);
+@import url(./blocks/get-player-name/__form/get-player-name__form.css);
+@import url(./blocks/get-player-name/__input/get-player-name__input.css);
+@import url(./blocks/get-player-name/__error/get-player-name__error.css);
+@import url(./blocks/get-player-name/__submit-btn/get-player-name__submit-btn.css);
+@import url(./blocks/get-player-name/__submit-btn/_disabled/get-player-name__submit-btn_disabled.css);
+
+@import url(./blocks/leaderboard/leaderboard.css);
+@import url(./blocks/leaderboard/__icon/leaderboard__icon.css);
+@import url(./blocks/leaderboard/__title/leaderboard__title.css);
+@import url(./blocks/leaderboard/__list-wrapper/leaderboard__list-wrapper.css);
+@import url(./blocks/leaderboard/__list/leaderboard__list.css);
+@import url(./blocks/leaderboard/__element/leaderboard__element.css);
+@import url(./blocks/leaderboard/__element-icon/leaderboard__element-icon.css);
+@import url(./blocks/leaderboard/__element-icon/_place/leaderboard__element-icon_place_first.css);
+@import url(./blocks/leaderboard/__element-icon/_place/leaderboard__element-icon_place_second.css);
+@import url(./blocks/leaderboard/__element-icon/_place/leaderboard__element-icon_place_third.css);
+@import url(./blocks/leaderboard/__element-name/leaderboard__element-name.css);
+@import url(./blocks/leaderboard/__element-time/leaderboard__element-time.css);
+@import url(./blocks/leaderboard/__overlay/leaderboard__overlay.css);
+
+@import url(./blocks/game/game.css);
+@import url(./blocks/game/__info-container/game__info-container.css);
+@import url(./blocks/game/__info/game__info.css);
+@import url(./blocks/game/__player-icon/game__player-icon.css);
+@import url(./blocks/game/__player-name/game__player-name.css);
+@import url(./blocks/game/__restart-btn/game__restart-btn.css);
+
+@import url(./blocks/timer/timer.css);
+@import url(./blocks/timer/__icon/timer__icon.css);
+@import url(./blocks/timer/__time/timer__time.css);
+
+@import url(./blocks/cards/cards.css);
+@import url(./blocks/card-container/card-container.css);
+@import url(./blocks/card-wrapper/card-wrapper.css);
+@import url(./blocks/card/card.css);
+@import url(./blocks/card/_state/card_state_flipped.css);
+@import url(./blocks/card/_status/card_status_match.css);
+@import url(./blocks/card/_status/card_status_no-match.css);
+@import url(./blocks/card/_status/card_status_normal.css);
+@import url(./blocks/card/_side/card_side_front.css);
+@import url(./blocks/card/_side/card_side_back.css);
+@import url(./blocks/card/_image/card_image_apple.css);
+@import url(./blocks/card/_image/card_image_banana.css);
+@import url(./blocks/card/_image/card_image_broccoli.css);
+@import url(./blocks/card/_image/card_image_grapes.css);
+@import url(./blocks/card/_image/card_image_carrot.css);
+@import url(./blocks/card/_image/card_image_corn.css);
+@import url(./blocks/card/_image/card_image_pumpkin.css);
+@import url(./blocks/card/_image/card_image_strawberries.css);
+@import url(./blocks/card/_image/card_image_tomato.css);
+@import url(./blocks/card/_image/card_image_cucumber.css);
+@import url(./blocks/card/_image/card_image_eggplant.css);
+@import url(./blocks/card/_image/card_image_pear.css);
+
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_is-opened/popup_is-opened.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/__icon/popup__icon.css);
+@import url(./blocks/popup/__title/popup__title.css);
+@import url(./blocks/popup/__time/popup__time.css);
+@import url(./blocks/popup/__close-btn/popup__close-btn.css);
+@import url(./blocks/close-btn/close-btn.css);
+
+@import url(./blocks/page-not-found/page-not-found.css);
+@import url(./blocks/page-not-found/__image/page-not-found__image.css);
+@import url(./blocks/page-not-found/__title/page-not-found__title.css);
+@import url(./blocks/page-not-found/__description/page-not-found__description.css);
+@import url(./blocks/page-not-found/__link/page-not-found__link.css);
