@@ -1,0 +1,9 @@
+.timer__time {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 200;
+  color: #2a2643;
+  margin: 0;
+  width: 105px;
+  text-align: start;
+}

@@ -1,0 +1,13 @@
+.game {
+  display: grid;
+  grid-template-columns: calc(90vh + 75px) 220px;
+  gap: 0 50px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+@media screen and (max-width: 1240px) {
+  .game {
+  }
+}

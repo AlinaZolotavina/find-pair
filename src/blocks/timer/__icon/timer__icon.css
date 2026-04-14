@@ -1,0 +1,10 @@
+.timer__icon {
+  background-image: url(../../../images/Timer.svg);
+  width: 70px;
+  height: 70px;
+  border-style: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
