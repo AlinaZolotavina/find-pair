@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/find-pair/static/css/main.8517d275.css",
+    "main.js": "/find-pair/static/js/main.dc961663.js",
+    "static/js/787.8b13fbeb.chunk.js": "/find-pair/static/js/787.8b13fbeb.chunk.js",
+    "static/media/leaderboard.svg": "/find-pair/static/media/leaderboard.75ba74dd317224b8b54c.svg",
+    "static/media/find-pair-logo.svg": "/find-pair/static/media/find-pair-logo.fe0cfb4dd6313827a3dd.svg",
+    "static/media/victory.svg": "/find-pair/static/media/victory.cd95b56bf799d346ea4160409fcf37e6.svg",
+    "static/media/get-player-name.svg": "/find-pair/static/media/get-player-name.20f15b1d757cbbdc7c57.svg",
+    "static/media/Player.svg": "/find-pair/static/media/Player.44dd96e3c69572ea1f66.svg",
+    "static/media/not-found.svg": "/find-pair/static/media/not-found.526ca0ed3126d1699e2d.svg",
+    "static/media/Timer.svg": "/find-pair/static/media/Timer.8be32b42ac7fcdd69ca1.svg",
+    "static/media/Corn.svg": "/find-pair/static/media/Corn.6a77612434a7e20936f8.svg",
+    "static/media/Broccoli.svg": "/find-pair/static/media/Broccoli.a019b3f378833bb48ebf.svg",
+    "static/media/Strawberries.svg": "/find-pair/static/media/Strawberries.3db49e655685c5986e23.svg",
+    "static/media/Grapes.svg": "/find-pair/static/media/Grapes.d9fcb29789d1b639eff0.svg",
+    "static/media/Pumpkin.svg": "/find-pair/static/media/Pumpkin.d93aa5693f1ac3ecde37.svg",
+    "static/media/Cucumber.svg": "/find-pair/static/media/Cucumber.659b77441def89cb017a.svg",
+    "static/media/Carrot.svg": "/find-pair/static/media/Carrot.4075c61020287e326760.svg",
+    "static/media/Tomato.svg": "/find-pair/static/media/Tomato.4e740e9480d323575a72.svg",
+    "static/media/Apple.svg": "/find-pair/static/media/Apple.a825c5d5c1c0fce229df.svg",
+    "static/media/Pear.svg": "/find-pair/static/media/Pear.dffa05852cb4a0e852a0.svg",
+    "static/media/Eggplant.svg": "/find-pair/static/media/Eggplant.efff563a96d11d0a4eaa.svg",
+    "static/media/Banana.svg": "/find-pair/static/media/Banana.defe2553d1388769f615.svg",
+    "index.html": "/find-pair/index.html",
+    "static/media/close-btn.svg": "/find-pair/static/media/close-btn.bb260c2dcef0325f343a.svg",
+    "main.8517d275.css.map": "/find-pair/static/css/main.8517d275.css.map",
+    "main.dc961663.js.map": "/find-pair/static/js/main.dc961663.js.map",
+    "787.8b13fbeb.chunk.js.map": "/find-pair/static/js/787.8b13fbeb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8517d275.css",
+    "static/js/main.dc961663.js"
+  ]
+}
