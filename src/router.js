@@ -6,33 +6,26 @@ import Leaderboard from "./components/Leaderboard";
 import Game from "./components/Game";
 import PageNotFound from "./components/PageNotFound";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      children: [
+        { index: true, element: <GameMenu /> },
+        { path: "get-player-name", element: <GetPlayerName /> },
+        { path: "leaderboard", element: <Leaderboard /> },
+        { path: "new-game", element: <Game /> },
+        { path: "*", element: <PageNotFound /> },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <App />, // layout
-    children: [
-      {
-        index: true,
-        element: <GameMenu />,
-      },
-      {
-        path: "get-player-name",
-        element: <GetPlayerName />,
-      },
-      {
-        path: "leaderboard",
-        element: <Leaderboard />,
-      },
-      {
-        path: "new-game",
-        element: <Game />,
-      },
-      {
-        path: "*",
-        element: <PageNotFound />,
-      },
-    ],
+    basename: process.env.NODE_ENV === "production" ? "/find-pair" : undefined,
   },
-]);
-
+);
+console.log(
+  "Router created with basename:",
+  process.env.NODE_ENV === "production" ? "/find-pair" : "undefined",
+);
 export default router;
