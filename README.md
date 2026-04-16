@@ -8,7 +8,7 @@ A small browser-based memory game where you match card pairs as quickly as possi
 
 ## 💻 Demo
 
-[Click here to see demo.]("https://alinazolotavina.github.io/find-pair")
+[Click here to see demo.](https://alinazolotavina.github.io/find-pair)
 
 ## 🛠️ Technologies
 
