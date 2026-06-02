@@ -9,6 +9,20 @@ import cards from "../utils/cards";
 import formatTime from "../utils/formatTime.js";
 
 function Game() {
+  const [isCompactLayout, setIsCompactLayout] = useState(
+    window.innerWidth < 1280,
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsCompactLayout(window.innerWidth < 1280);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const {
     playerName,
     setGameResult,
@@ -82,26 +96,55 @@ function Game() {
     }
   }, [playerName, navigate]);
 
+  if (!isCompactLayout) {
+    // десктоп
+    return (
+      <div className="game">
+        <Cards
+          key={gameKey}
+          cards={gameCards}
+          setGameCards={setGameCards}
+          onGameFinish={finishGame}
+        />
+
+        <div className="game__info-container">
+          <div className="game__info">
+            <div className="game__player-icon" />
+            <p className="game__player-name">{playerName}</p>
+            <Timer elapsedTime={elapsedTime} />
+          </div>
+
+          <button className="game__restart-btn" onClick={startGame}>
+            Restart
+          </button>
+        </div>
+
+        <BackLink href="/" linkText="Back to menu" />
+      </div>
+    );
+  }
+  // планшет
   return (
     <div className="game">
+      <div className="game__info-container">
+        <div className="game__info">
+          <div className="game__player-icon" />
+          <p className="game__player-name">{playerName}</p>
+        </div>
+        <div className="game__info">
+          <Timer elapsedTime={elapsedTime} />
+          <button className="game__restart-btn" onClick={startGame}>
+            Restart
+          </button>
+        </div>
+      </div>
+
       <Cards
         key={gameKey}
         cards={gameCards}
         setGameCards={setGameCards}
         onGameFinish={finishGame}
       />
-
-      <div className="game__info-container">
-        <div className="game__info">
-          <div className="game__player-icon" />
-          <p className="game__player-name">{playerName}</p>
-          <Timer elapsedTime={elapsedTime} />
-        </div>
-
-        <button className="game__restart-btn" onClick={startGame}>
-          Restart
-        </button>
-      </div>
 
       <BackLink href="/" linkText="Back to menu" />
     </div>

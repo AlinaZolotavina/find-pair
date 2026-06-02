@@ -1,5 +1,21 @@
 .game__info-container {
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 830px) {
+  .game__info-container {
+    flex-direction: row;
+    justify-content: space-around;
+    width: calc(40vh + 40px);
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .game__info-container {
+    width: 75vw;
+  }
 }

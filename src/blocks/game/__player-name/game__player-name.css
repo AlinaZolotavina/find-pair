@@ -19,3 +19,23 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media (max-width: 830px) {
+  .game__player-name {
+    font-size: 16px;
+    line-height: 20px;
+    min-width: 120px;
+    max-width: 140px;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .game__player-name {
+    font-size: 14px;
+    line-height: 17px;
+    min-width: 80px;
+    padding: 5px;
+  }
+}
+

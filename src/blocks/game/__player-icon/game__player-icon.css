@@ -11,3 +11,24 @@
   margin-bottom: -17px;
   pointer-events: none;
 }
+
+@media (max-width: 830px) {
+  .game__player-icon {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 500px) {
+  .game__player-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 300px) {
+  .game__player-icon {
+    width: 70px;
+    height: 70px;
+  }
+}

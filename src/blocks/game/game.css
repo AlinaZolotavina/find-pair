@@ -1,13 +1,32 @@
 .game {
-  display: grid;
-  grid-template-columns: calc(90vh + 75px) 220px;
-  gap: 0 50px;
+  display: flex;
+  gap: 5%;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f9fdff;
 }
 
-@media screen and (max-width: 1240px) {
+@media screen and (max-width: 830px) {
   .game {
+    flex-direction: column;
+    gap: 30px 0;
+    padding: 40px 20px 20px;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .game {
+    padding: 25px 10px 10px;
+  }
+}
+
+@media screen and (orientation: portrait) and (min-height: 750px) and (max-width: 500px) {
+  .game {
+    justify-content: center;
+    min-height: calc(100vh - 35px);
   }
 }
