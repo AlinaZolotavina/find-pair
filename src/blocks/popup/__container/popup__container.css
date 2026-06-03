@@ -1,7 +1,8 @@
 .popup__container {
   position: relative;
   display: flex;
-  width: 380px;
+  width: min(80vw, 380px);
+  height: 50px;
   max-height: fit-content;
   justify-content: center;
   align-items: center;
@@ -13,4 +14,11 @@
   border-radius: 10px;
   font-size: 16px;
   line-height: 23px;
+}
+
+@media screen and (max-width: 500px) {
+  .popup__container {
+    font-size: 13px;
+    line-height: 16px;
+  }
 }

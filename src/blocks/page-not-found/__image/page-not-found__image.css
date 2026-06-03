@@ -6,3 +6,10 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 400px) {
+  .page-not-found__image {
+    width: 180px;
+    height: 180px;
+  }
+}

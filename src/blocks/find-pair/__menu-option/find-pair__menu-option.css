@@ -15,7 +15,7 @@
     opacity 0.2s ease 0.1s;
   background-color: #4e89c8;
   cursor: pointer;
-  width: 200px;
+  width: min(45vw, 200px);
   height: 50px;
   text-decoration: none;
 }
@@ -27,4 +27,11 @@
 .find-pair__menu-option:hover {
   opacity: 1;
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 500px) {
+  .find-pair__menu-option {
+    font-size: 14px;
+    line-height: 17px;
+  }
 }

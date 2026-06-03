@@ -1,4 +1,5 @@
 .card_side_front {
   transform: rotateY(180deg);
-  margin: 20px;
+  padding: 10px;
+  box-sizing: border-box;
 }
