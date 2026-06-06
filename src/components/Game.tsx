@@ -7,6 +7,7 @@ import BackLink from "./BackLink";
 import cards from "../utils/baseCards";
 
 import formatTime from "../utils/formatTime";
+import createGameDeck from "../utils/createGameDeck";
 
 import { AppContext } from "../types/app-context";
 import type { Card as CardType } from "../types/cards";
@@ -51,15 +52,7 @@ function Game() {
     setIsGameFinished(false);
     setGameResult(null);
     // 1. Shuffle cards
-    const shuffled: CardType[] = [...cards, ...cards]
-      .sort(() => Math.random() - 0.5)
-      .map((card) => ({
-        ...card,
-        id: Math.random(),
-        matched: false,
-        status: "normal",
-      }));
-    setGameCards(shuffled);
+    setGameCards(createGameDeck());
     setGameKey((prev) => prev + 1);
 
     // 2. Restart timer
