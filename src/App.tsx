@@ -1,12 +1,14 @@
 import { Outlet } from "react-router-dom";
-import Popup from "./Popup";
+import Popup from "./components/Popup";
 import { useState, useEffect } from "react";
 
 function App() {
   const [playerName, setPlayerName] = useState("");
-  const [gameResult, setGameResult] = useState(null);
+  const [gameResult, setGameResult] = useState<string | null>(null);
   const [isGameFinished, setIsGameFinished] = useState(false);
-  const [restartHandler, setRestartHandler] = useState(null);
+  const [restartHandler, setRestartHandler] = useState<(() => void) | null>(
+    null,
+  );
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   function openPopup() {
@@ -15,7 +17,6 @@ function App() {
 
   function closePopup() {
     setIsPopupOpen(false);
-    console.log("Popup closed");
   }
 
   function restartGame() {
@@ -23,22 +24,17 @@ function App() {
     setIsPopupOpen(false);
   }
 
-  const handleEscPress = (e) => {
-    const { keyCode } = e;
-    if (keyCode === 27 && isPopupOpen) {
-      closePopup();
-    }
-  };
-
-  useEffect(
-    (e) => {
-      window.addEventListener("keydown", handleEscPress);
-      return () => {
-        window.removeEventListener("keydown", handleEscPress);
-      };
-    },
-    [isPopupOpen],
-  );
+  useEffect(() => {
+    const handleEscPress = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isPopupOpen) {
+        closePopup();
+      }
+    };
+    window.addEventListener("keydown", handleEscPress);
+    return () => {
+      window.removeEventListener("keydown", handleEscPress);
+    };
+  }, [isPopupOpen]);
 
   return (
     <>

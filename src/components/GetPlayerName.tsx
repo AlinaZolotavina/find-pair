@@ -1,35 +1,30 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import BackLink from "./BackLink";
+import { AppContext } from "../types/app-context";
+
+type GetPlayerNameContext = Pick<AppContext, "setPlayerName">;
 
 function GetPlayerName() {
   const navigate = useNavigate();
-  const { setPlayerName } = useOutletContext();
+  const { setPlayerName } = useOutletContext<GetPlayerNameContext>();
 
   const [localPlayerName, setLocalPlayerName] = useState("");
-  const [playerNamerError, setPlayerNameError] = useState("");
-  const [isFormValid, setIsFormValid] = useState(false);
+  const [playerNameError, setPlayerNameError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isFormValid = localPlayerName.length > 0 && !playerNameError;
 
-  function handlePlayerNameChange(e) {
-    if (e.target.value.length === 0) {
+  function handlePlayerNameChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = e.currentTarget.value;
+    if (value.length === 0) {
       setPlayerNameError("Name is required");
     } else {
       setPlayerNameError("");
     }
-    setLocalPlayerName(e.target.value);
+    setLocalPlayerName(value);
   }
 
-  useEffect(() => {
-    if (localPlayerName && !playerNamerError) {
-      setIsFormValid(true);
-    } else {
-      setIsFormValid(false);
-    }
-  }, [localPlayerName, playerNamerError]);
-
-  function handleSubmit(e) {
-    console.log("Submit player name:", localPlayerName);
+  function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!isFormValid) return;
     setIsSubmitting(true);
@@ -50,8 +45,9 @@ function GetPlayerName() {
           value={localPlayerName}
           required
           disabled={isSubmitting}
+          name="player-name"
         />
-        <span className="get-player-name__error">{playerNamerError}</span>
+        <span className="get-player-name__error">{playerNameError}</span>
         <button
           className={`get-player-name__submit-btn ${isFormValid ? "" : "get-player-name__submit-btn_disabled"}`}
           type="submit"

@@ -1,4 +1,12 @@
-function Card({ card, onHandleChoice, flipped, disabled }) {
+import type { Card as CardType } from "../types/cards";
+interface CardProps {
+  card: CardType;
+  onHandleChoice: (card: CardType) => void;
+  flipped: boolean;
+  disabled: boolean;
+}
+
+function Card({ card, onHandleChoice, flipped, disabled }: CardProps) {
   function handleClick() {
     if (!disabled) {
       onHandleChoice(card);

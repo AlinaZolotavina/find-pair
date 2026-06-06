@@ -4,12 +4,14 @@
   "private": true,
   "homepage": "https://AlinaZolotavina.github.io/find-pair",
   "dependencies": {
+    "@reduxjs/toolkit": "^2.12.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "cross-env": "^10.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.3.0",
     "react-router-dom": "6.4",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
@@ -41,6 +43,12 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.16",
+    "@types/react-dom": "^19.2.3",
+    "@types/react-redux": "^7.1.34",
+    "gh-pages": "^6.3.0",
+    "typescript": "^4.9.5"
   }
 }

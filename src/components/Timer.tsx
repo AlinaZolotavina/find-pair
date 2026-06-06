@@ -1,6 +1,10 @@
-import formatTime from "../utils/formatTime.js";
+import formatTime from "../utils/formatTime";
 
-function Timer({ elapsedTime }) {
+interface TimerProps {
+  elapsedTime: number;
+}
+
+function Timer({ elapsedTime }: TimerProps) {
   return (
     <div className="timer">
       <div className="timer__icon" />

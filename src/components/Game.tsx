@@ -4,9 +4,12 @@ import { useEffect, useState, useRef } from "react";
 import Cards from "./Cards";
 import Timer from "./Timer";
 import BackLink from "./BackLink";
-import cards from "../utils/cards";
+import cards from "../utils/baseCards";
 
-import formatTime from "../utils/formatTime.js";
+import formatTime from "../utils/formatTime";
+
+import { AppContext } from "../types/app-context";
+import type { Card as CardType } from "../types/cards";
 
 function Game() {
   const [isCompactLayout, setIsCompactLayout] = useState(
@@ -30,16 +33,16 @@ function Game() {
     isGameFinished,
     setIsGameFinished,
     setRestartHandler,
-  } = useOutletContext();
+  } = useOutletContext<AppContext>();
   const navigate = useNavigate();
 
   // Timer
   const startTimeRef = useRef(0);
-  const intervalRef = useRef(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [elapsedTime, setElapsedTime] = useState(0);
 
   // Cards
-  const [gameCards, setGameCards] = useState([]);
+  const [gameCards, setGameCards] = useState<CardType[]>([]);
   const [gameKey, setGameKey] = useState(0); // to reset Cards component
 
   // Start / Restart game
@@ -48,7 +51,7 @@ function Game() {
     setIsGameFinished(false);
     setGameResult(null);
     // 1. Shuffle cards
-    const shuffled = [...cards, ...cards]
+    const shuffled: CardType[] = [...cards, ...cards]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({
         ...card,
@@ -60,7 +63,9 @@ function Game() {
     setGameKey((prev) => prev + 1);
 
     // 2. Restart timer
-    clearInterval(intervalRef.current);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
     startTimeRef.current = performance.now();
     setElapsedTime(0);
 
@@ -76,14 +81,20 @@ function Game() {
   // Start game on component mount
   useEffect(() => {
     startGame();
-    return () => clearInterval(intervalRef.current);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
   }, []);
 
   // Finish game
   const finishGame = () => {
     if (isGameFinished) return;
     setIsGameFinished(true);
-    clearInterval(intervalRef.current);
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
     const totalTime = performance.now() - startTimeRef.current;
     const formattedTime = formatTime(totalTime);
     setGameResult(formattedTime);

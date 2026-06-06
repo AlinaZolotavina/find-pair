@@ -5,8 +5,8 @@ function GameMenu() {
     <div className="find-pair">
       <div className="find-pair__logo" />
       <div className="find-pair__menu">
-        <MenuOption buttonText="New game" page="/get-player-name" />
-        <MenuOption buttonText="Leaderboard" page="/leaderboard" />
+        <MenuOption text="New game" page="/get-player-name" />
+        <MenuOption text="Leaderboard" page="/leaderboard" />
       </div>
     </div>
   );

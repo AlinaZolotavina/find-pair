@@ -1,14 +1,21 @@
 import Card from "./Card";
 import { useEffect, useState } from "react";
+import type { Card as CardType } from "../types/cards";
 
-function Cards({ cards, setGameCards, onGameFinish }) {
-  const [firstChoice, setFirstChoice] = useState(null);
-  const [secondChoice, setSecondChoice] = useState(null);
+interface CardsProps {
+  cards: CardType[];
+  setGameCards: React.Dispatch<React.SetStateAction<CardType[]>>;
+  onGameFinish: () => void;
+}
+
+function Cards({ cards, setGameCards, onGameFinish }: CardsProps) {
+  const [firstChoice, setFirstChoice] = useState<CardType | null>(null);
+  const [secondChoice, setSecondChoice] = useState<CardType | null>(null);
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     if (cards.length && cards.every((card) => card.matched)) {
-      onGameFinish?.();
+      onGameFinish();
     }
   }, [cards, onGameFinish]);
 
@@ -37,17 +44,7 @@ function Cards({ cards, setGameCards, onGameFinish }) {
     }
   }, [firstChoice, secondChoice]);
 
-  useEffect(() => {
-    if (cards.length === 0) return;
-
-    const allMatched = cards.every((card) => card.matched);
-
-    if (allMatched) {
-      onGameFinish();
-    }
-  }, [cards]);
-
-  const handleChoice = (card) => {
+  const handleChoice = (card: CardType) => {
     if (disabled) return;
     if (card.id === firstChoice?.id) return;
     !firstChoice ? setFirstChoice(card) : setSecondChoice(card);

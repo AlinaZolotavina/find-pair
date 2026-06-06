@@ -1,47 +1,48 @@
 ![alt-текст](./src/images/find-pair-banner.jpg)
 
-# 🎮 Find Pair Game
+# Find Pair Game
 
-A small browser-based memory game where you match card pairs as quickly as possible.
+A browser-based memory game built with React and TypeScript, where you match card pairs as quickly as possible.
 
----
-
-## 💻 Demo
+## Demo
 
 [Click here to see demo.](https://alinazolotavina.github.io/find-pair)
 
-## 🛠️ Technologies
+## Features
+
+- Player name registration
+- Memory card matching gameplay
+- Game timer with formatted results
+- Victory popup with restart option
+- Client-side routing
+- Responsive layout for different screen sizes
+- Type-safe codebase powered by TypeScript
+
+## Technologies
 
 - React (Hooks: useState, useEffect, useRef)
-- React Router (createBrowserRouter, Outlet)
-- CSS (BEM methodology)
-- JavaScript (ES6+)
+- React Router DOM (createBrowserRouter, Outlet)
+- CSS & BEM methodology
+- TypeScript
 
----
-
-## 🚀 Installation & Run
+## Installation & Run
 
 ```bash
-git clone https://github.com/your-username/find-pair.git
+git clone https://github.com/AlinaZolotavina/find-pair.git
 cd find-pair
 npm install
 npm start
 ```
 
-After running the app, it will be available at: 👉 http://localhost:3000
+After running the app, it will be available at http://localhost:3000
 
----
+## How to Play
 
-## 🎮 How to Play
+- Enter your name and start a new game
+- Flip cards and find matching pairs
+- Finish the game as quickly as possible
 
-- Enter your name
-- Flip cards
-- Find matching pairs
-- Finish the game as fast as possible.
-
----
-
-## 🧩 Core Logic
+## Core Logic
 
 🔹 Cards:
 
@@ -51,61 +52,47 @@ After running the app, it will be available at: 👉 http://localhost:3000
 🔹 Gameplay:
 
 - player selects 2 cards
-- if they match → stay open
-- if not → flip back
+- matching cards remain open
+- non-matching cards are temporarily highlighted and then flipped back
 
 🔹 Timer:
 
 - starts at the beginning
-- stops at the end
+- stops when all pairs are matched
 - result is shown in a popup
 
-🔹 Game End:
-
-when all pairs are found:
+🔹 Game ends when all pairs are found:
 
 - the timer stops
-- a result popup appears
+- the popup with final result appears
 - the player can restart the game
 
----
+## Architecture
 
-## 🧠 Architecture
+🔹 App manages global state (player name, result, popup) and passes it via Outlet context
 
-🔹 App (Layout)
+🔹 Game is responsible for the core game logic (timer, cards, game completion)
 
-Manages global state:
+🔹 Cards and Card handle card selection and match checking
 
-- player name
-- result
-- popup
-- Passes data via Outlet context
+🔹 Popup shows result and allows the player to restart the game or navigate to the leaderboard
 
-🔹 Game: core game logic (timer, cards, game completion)
+## Routing
 
-🔹 Cards / Card: handles card selection and match checking
-
-## 🔹 Popup: shows result and allows the player to restart the game or navigate to the leaderboard
-
-## 🧭 Routing
-
-    / — menu
-    /get-player-name — name input
-    /new-game — game
-    /leaderboard — leaderboard
+    / - Game menu
+    /get-player-name - Player name form
+    /new-game - Game screen
+    /leaderboard - Leaderboard
     404 page
 
----
-
-## 💡 Possible Improvements
+## Future Improvements
 
 - Leaderboard (localStorage / backend)
 - Difficulty levels
 - Animations and sound
-- Responsiveness
+- Unit tests
+- Backend integration
 
----
+## License
 
-## 📄 License
-
-## MIT
+MIT
