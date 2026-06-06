@@ -6,6 +6,14 @@ import GetPlayerName from "./GetPlayerName";
 const mockNavigate = jest.fn();
 const mockSetPlayerName = jest.fn();
 
+function renderGetPlayerName() {
+  return render(
+    <MemoryRouter>
+      <GetPlayerName />
+    </MemoryRouter>,
+  );
+}
+
 beforeEach(() => {
   jest.clearAllMocks();
 });
@@ -21,11 +29,7 @@ jest.mock("react-router-dom", () => ({
 }));
 
 test("renders input and button", () => {
-  render(
-    <MemoryRouter>
-      <GetPlayerName />
-    </MemoryRouter>,
-  );
+  renderGetPlayerName();
 
   expect(
     screen.getByPlaceholderText("Enter your name or nickname"),
@@ -35,11 +39,7 @@ test("renders input and button", () => {
 });
 
 test("play button is disabled initially", () => {
-  render(
-    <MemoryRouter>
-      <GetPlayerName />
-    </MemoryRouter>,
-  );
+  renderGetPlayerName();
 
   const button = screen.getByRole("button", {
     name: /play/i,
@@ -51,11 +51,7 @@ test("play button is disabled initially", () => {
 test("enables button after entering name", async () => {
   const user = userEvent.setup();
 
-  render(
-    <MemoryRouter>
-      <GetPlayerName />
-    </MemoryRouter>,
-  );
+  renderGetPlayerName();
 
   const input = screen.getByRole("textbox");
 
@@ -73,11 +69,7 @@ test("enables button after entering name", async () => {
 test("submits player name", async () => {
   const user = userEvent.setup();
 
-  render(
-    <MemoryRouter>
-      <GetPlayerName />
-    </MemoryRouter>,
-  );
+  renderGetPlayerName();
 
   const input = screen.getByRole("textbox");
 
