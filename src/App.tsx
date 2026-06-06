@@ -24,18 +24,6 @@ function App() {
     setIsPopupOpen(false);
   }
 
-  useEffect(() => {
-    const handleEscPress = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isPopupOpen) {
-        closePopup();
-      }
-    };
-    window.addEventListener("keydown", handleEscPress);
-    return () => {
-      window.removeEventListener("keydown", handleEscPress);
-    };
-  }, [isPopupOpen]);
-
   return (
     <>
       <Outlet
