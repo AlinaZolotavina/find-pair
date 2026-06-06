@@ -10,18 +10,17 @@ function GetPlayerName() {
   const { setPlayerName } = useOutletContext<GetPlayerNameContext>();
 
   const [localPlayerName, setLocalPlayerName] = useState("");
-  const [playerNameError, setPlayerNameError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const isFormValid = localPlayerName.length > 0 && !playerNameError;
+  const [isTouched, setIsTouched] = useState(false);
+  const playerNameError =
+    isTouched && localPlayerName.length === 0 ? "Name is required" : "";
+  const isFormValid = localPlayerName.trim().length > 0;
 
   function handlePlayerNameChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const value = e.currentTarget.value;
-    if (value.length === 0) {
-      setPlayerNameError("Name is required");
-    } else {
-      setPlayerNameError("");
+    if (!isTouched) {
+      setIsTouched(true);
     }
-    setLocalPlayerName(value);
+    setLocalPlayerName(e.currentTarget.value);
   }
 
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
