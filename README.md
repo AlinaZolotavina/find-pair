@@ -8,6 +8,17 @@ A browser-based memory game built with React and TypeScript, where you match car
 
 [Click here to see demo.](https://alinazolotavina.github.io/find-pair)
 
+## Project Structure
+
+```text
+src
+├── components
+├── utils
+├── types
+├── images
+└── blocks
+```
+
 ## Features
 
 - Player name registration
@@ -17,13 +28,16 @@ A browser-based memory game built with React and TypeScript, where you match car
 - Client-side routing
 - Responsive layout for different screen sizes
 - Type-safe codebase powered by TypeScript
+- Automated unit and component tests
 
 ## Technologies
 
-- React (Hooks: useState, useEffect, useRef)
-- React Router DOM (createBrowserRouter, Outlet)
-- CSS & BEM methodology
+- React
 - TypeScript
+- React Router DOM
+- Jest
+- React Testing Library
+- CSS & BEM methodology
 
 ## Installation & Run
 
@@ -35,6 +49,24 @@ npm start
 ```
 
 After running the app, it will be available at http://localhost:3000
+
+## Testing
+
+Run all tests:
+
+```bash
+npm test
+```
+
+Test coverage includes:
+
+- formatTime utility
+- createGameDeck utility
+- GetPlayerName component
+- Card component
+- Cards component
+- Popup component
+- Game component
 
 ## How to Play
 
@@ -77,6 +109,10 @@ After running the app, it will be available at http://localhost:3000
 
 🔹 Popup shows result and allows the player to restart the game or navigate to the leaderboard
 
+🔹 Shared TypeScript types are stored in the `types` directory
+
+🔹 Utility functions are isolated in `utils` and covered by tests
+
 ## Routing
 
     / - Game menu
@@ -90,7 +126,7 @@ After running the app, it will be available at http://localhost:3000
 - Leaderboard (localStorage / backend)
 - Difficulty levels
 - Animations and sound
-- Unit tests
+- E2E tests
 - Backend integration
 
 ## License
